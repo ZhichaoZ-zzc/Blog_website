@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content{
+            margin-left: 20px;
+            display: none;
+        /*    默认content不显示*/
+        }
+        .content a{
+            display: block;
+        }
+        /*    >  表示 active 下的儿子     */
+        .active > .content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div style="float: left;width: 20%;">
+        {{ menu_string|safe }}
+    </div>
+    <div style="float: left;width: 80px;">
+        {% if 'POST' in action_list %}
+            <a href="http://www.baidu.com">添加</a>
+        {% endif %}
+    </div>
+</body>
+</html>
